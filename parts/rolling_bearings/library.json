@@ -1,0 +1,57 @@
+{
+  "metadata":{
+    "name": "rolling-bearings-library",
+    "description": "Rolling bearings library",
+    "units": {
+      "length": ["mm", ["outer_diameter", "inner_diameter", "thickness", "flange_diameter", "flange_thickness"]],
+      "force": ["N", ["load_static", "load_dynamic"]],
+      "weight": ["g", ["weight"]]
+    },
+    "authors": ["Guillaume Florent", "Thomas Paviot", "Bernard Uguen"],
+    "url": "https://github.com/guillaume-florent/standard-cad-parts/parts/rolling_bearings",
+    "license": "GPL v3"
+  },
+  "generators":
+    { "flanged_bearing" : ["r'''Flanged bearing generation'''","","from ccad.model import cylinder","","outer_diameter = {{ outer_diameter }}","inner_diameter = {{ inner_diameter }}","thickness = {{ thickness }}","","flange_diameter = {{ flange_diameter}}","flange_thickness = {{ flange_thickness }}","","# Bearing body generation by substracting an inner cylinder","part = cylinder(outer_diameter / 2, thickness) - cylinder(inner_diameter / 2, thickness)","","# Flange creation and adding","flange = cylinder(flange_diameter / 2, flange_thickness) - \\","         cylinder(outer_diameter / 2, flange_thickness)","part += flange","","# anchors = [((0., 0., 0.), (0., 0., -10.)),","#            ((0., 0., flange_thickness), (0., 0., -10.)),","#            ((0., 0., thickness), (0., 0., 10.))]","","anchors = {1: {'position': (0., 0., 0.),","               'direction': (0., 0., -1.),","               'dimension': inner_diameter,","               'iso_tolerance': 'undefined',","               'description': 'bearing axis on axle'},","           2: {'position': (0., 0., flange_thickness),","               'direction': (0., 0., -1.),","               'dimension': outer_diameter,","               'iso_tolerance': 'undefined',","               'description': 'flange bottom on surface, bearing in cage'}}"],
+"plain_bearing" : ["r'''Plain bearing generation'''","","from ccad.model import cylinder","","outer_diameter = {{ outer_diameter }}  # The outer diameter of the bearing","inner_diameter = {{ inner_diameter }}","thickness = {{ thickness }}","","# The bearing is modelled as a cylinder with a hole in the middle","part = cylinder(outer_diameter / 2, thickness) - cylinder(inner_diameter / 2, thickness)","","anchors = [((0., 0., 0.), (0., 0., -10.)),","           ((0., 0., thickness), (0., 0., 10.))]","","anchors = {1: {'position': (0., 0., thickness / 2.),","               'direction': (0., 0., -1.),","               'dimension': inner_diameter,","               'iso_tolerance': 'undefined',","               'description': 'bearing axis on axle'},","           2: {'position': (0., 0., thickness / 2.),","               'direction': (0., 0., -1.),","               'dimension': outer_diameter,","               'iso_tolerance': 'undefined',","               'description': 'bearing axis in cage'}}"]
+ },
+  "rules": ["outer_diameter > inner_diameter", "weight > 0"],
+  "data":{
+    "608ZZ": {
+      "description": "608ZZ bearing",
+      "generator": "plain_bearing",
+      "outer_diameter": 22.0,
+      "inner_diameter": 8.0,
+      "thickness": 7.0,
+      "flange_diameter": 0.0,
+      "flange_thickness": 0.0,
+      "load_static" : 1350,
+      "load_dynamic" : 3300,
+      "weight" : 12.0
+    },
+    "624ZZ": {
+      "description": "624ZZ bearing",
+      "generator": "plain_bearing",
+      "outer_diameter": 13.0,
+      "inner_diameter": 4.0,
+      "thickness": 5.0,
+      "flange_diameter": 0.0,
+      "flange_thickness": 0.0,
+      "load_static" : 490,
+      "load_dynamic" : 1300,
+      "weight" : 2.7
+    },
+    "F63800ZZ": {
+      "description": "F63800ZZ flanged bearing",
+      "generator": "flanged_bearing",
+      "outer_diameter": 19.0,
+      "inner_diameter": 10.0,
+      "thickness": 7.0,
+      "flange_diameter": 21.0,
+      "flange_thickness": 1.5,
+      "load_static" : 840,
+      "load_dynamic" : 1716,
+      "weight" : 8.1
+    }
+  }
+}

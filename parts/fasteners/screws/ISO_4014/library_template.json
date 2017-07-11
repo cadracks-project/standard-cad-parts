@@ -1,0 +1,167 @@
+{
+  "metadata":{
+    "name": "iso4014-screws-library",
+    "description": "ISO 4014 Screws library",
+    "units": {
+      "length": ["mm", ["p", "b_ref_b", "b_ref_c", "b_ref_d", "c_max", "c_min", "d_a", "d_s_max", "l_f_max", "k_nominal","r_min",
+        "s_max", "d_s_min", "d_w_min", "e", "k_max", "k_min", "k_w_e_min", "s_min", "l_min", "l_max", "l_s_min", "l_g_max"]],
+      "force": ["N", []],
+      "weight": ["g", []]
+    },
+    "authors": ["Guillaume Florent", "Thomas Paviot", "Bernard Uguen"],
+    "url": "https://github.com/guillaume-florent/standard-cad-parts/parts/fasteners/screws/ISO_4014",
+    "license": "GPL v3"
+  },
+  "generators":
+    { {{ generators }} },
+  "rules": [],
+  "aliases": {
+        "M1.6_grade_A": {
+          "generics": "__alias__M1.6_generics",
+          "grade_specifics": "__alias__M1.6_grade_A_specifics"
+        },
+        "M1.6_grade_B":{
+          "generics": "__alias__M1.6_generics",
+          "grade_specifics": "__alias__M1.6_grade_B_specifics"
+        },
+        "M1.6_generics": {
+          "p": 0.35,
+          "b_ref_b": 9.00,
+          "b_ref_c": 15.00,
+          "b_ref_d": 28.00,
+          "c_max": 0.25,
+          "c_min": 0.10,
+          "d_a": 2.00,
+          "d_s_max": 1.60,
+          "l_f_max": 0.60,
+          "k_nominal": 1.10,
+          "r_min": 0.10,
+          "s_max": 3.20
+        },
+        "M1.6_grade_A_specifics": {
+          "d_s_min": 1.46,
+          "d_w_min": 2.27,
+          "e": 3.41,
+          "k_max": 1.225,
+          "k_min": 0.975,
+          "k_w_e_min": 0.68,
+          "s_min": 3.02
+        },
+        "M1.6_grade_B_specifics": {
+          "d_s_min": 1.35,
+          "d_w_min": 2.30,
+          "e": 3.28,
+          "k_max": 1.30,
+          "k_min": 0.9,
+          "k_w_e_min": 0.63,
+          "s_min": 2.90
+        },
+
+        "M2_grade_A": {
+          "generics": "__alias__M2_generics",
+          "grade_specifics": "__alias__M2_grade_A_specifics"
+        },
+        "M2_grade_B":{
+          "generics": "__alias__M2_generics",
+          "grade_specifics": "__alias__M2_grade_B_specifics"
+        },
+        "M2_generics": {
+          "p": 0.40,
+          "b_ref_b": 10.00,
+          "b_ref_c": 16.00,
+          "b_ref_d": 29.00,
+          "c_max": 0.25,
+          "c_min": 0.10,
+          "d_a": 2.60,
+          "d_s_max": 2.00,
+          "l_f_max": 0.80,
+          "k_nominal": 1.40,
+          "r_min": 0.10,
+          "s_max": 4.00
+        },
+        "M2_grade_A_specifics": {
+          "d_s_min": 1.86,
+          "d_w_min": 3.07,
+          "e": 4.32,
+          "k_max": 1.525,
+          "k_min": 1.275,
+          "k_w_e_min": 0.89,
+          "s_min": 3.82
+        },
+        "M2_grade_B_specifics": {
+          "d_s_min": 1.75,
+          "d_w_min": 2.95,
+          "e": 4.18,
+          "k_max": 1.6,
+          "k_min": 1.2,
+          "k_w_e_min": 0.84,
+          "s_min": 3.70
+        },
+
+        "M2.5": {},
+        "M3": {},
+        "M4": {},
+        "M5": {},
+        "M6": {},
+        "M8": {},
+        "M10": {},
+        "M12": {},
+        "M16": {},
+        "M20": {},
+        "M24": {},
+        "M30": {},
+        "M36": {},
+        "M42": {},
+        "M48": {},
+        "M56": {},
+        "M64": {}
+  },
+  "data":{
+    "M1.6x12_A": {
+      "description": "M1.6 ISO 4014 screw, 12 mm, grade A",
+      "generator": "iso4014_screw",
+      "l_min": 11.65,
+      "l_max": 12.35,
+      "l_s_min": 1.20,
+      "l_g_max": 3.00,
+      "threading": "__alias__M1.6_grade_A"
+    },
+    "M1.6x16_A": {
+      "description": "M1.6 ISO 4014 screw, 16 mm, grade A",
+      "generator": "iso4014_screw",
+      "l_min": 15.65,
+      "l_max": 16.35,
+      "l_s_min": 5.20,
+      "l_g_max": 7.00,
+      "threading": "__alias__M1.6_grade_A"
+    },
+
+    "M2x16_A": {
+      "description": "M2 ISO 4014 screw, 16 mm, grade A",
+      "generator": "iso4014_screw",
+      "l_min": 15.65,
+      "l_max": 16.35,
+      "l_s_min": 4.00,
+      "l_g_max": 6.00,
+      "threading": "__alias__M2_grade_A"
+    },
+    "M2x20_A": {
+      "description": "M2 ISO 4014 screw, 20 mm, grade A",
+      "generator": "iso4014_screw",
+      "l_min": 19.58,
+      "l_max": 20.42,
+      "l_s_min": 8.00,
+      "l_g_max": 10.00,
+      "threading": "__alias__M2_grade_A"
+    },
+    "M2x20_B": {
+      "description": "M2 ISO 4014 screw, 20 mm, grade B",
+      "generator": "iso4014_screw",
+      "l_min": 18.95,
+      "l_max": 21.05,
+      "l_s_min": 8.00,
+      "l_g_max": 10.00,
+      "threading": "__alias__M2_grade_B"
+    }
+  }
+}

@@ -1,3 +1,6 @@
+# Pycharm project files
+/.idea
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -17,10 +20,9 @@ eggs/
 .eggs/
 lib/
 lib64/
-parts/
+# parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -43,7 +45,7 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*.cover
+*,cover
 .hypothesis/
 
 # Translations
@@ -67,7 +69,7 @@ docs/_build/
 # PyBuilder
 target/
 
-# Jupyter Notebook
+# IPython Notebook
 .ipynb_checkpoints
 
 # pyenv
@@ -76,26 +78,22 @@ target/
 # celery beat schedule file
 celerybeat-schedule
 
-# SageMath parsed files
-*.sage.py
-
 # dotenv
 .env
 
 # virtualenv
-.venv
 venv/
 ENV/
 
 # Spyder project settings
 .spyderproject
-.spyproject
 
 # Rope project settings
 .ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+/parts/fasteners/nuts/ISO_4032/scripts/
+/parts/fasteners/nuts/ISO_4032/steps/
+/parts/fasteners/screws/ISO_4014/scripts/
+/parts/fasteners/screws/ISO_4014/steps/
+/parts/fasteners/nuts/ISO_4032/stls/
+/parts/fasteners/nuts/ISO_4032/htmls/
+/parts/fasteners/nuts/ISO_4032/doc/
